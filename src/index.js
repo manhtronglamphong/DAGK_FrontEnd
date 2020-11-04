@@ -11,12 +11,11 @@ import { createBrowserHistory } from "history";
 
 ReactDOM.render(
   <React.StrictMode>
-    
     <Router history={createBrowserHistory()}>
       <Menu/>
       <Switch>
         <Route exact path="/" component={ListBoard} />
-        <Route path="/boarddetail/:id" component={BoardDetails} />
+        <Route exact path="/boarddetail/:id" component={BoardDetails} />
       </Switch>
     </Router>
   </React.StrictMode>,
