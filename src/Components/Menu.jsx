@@ -15,7 +15,7 @@ export default function Menu() {
     <div>
       <div>
         <Navbar className="Navbar">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Brand href="/">Fontt Nununu</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -46,7 +46,6 @@ export default function Menu() {
           </Navbar.Collapse>
         </Navbar>
       </div>
-      <br/><br/>
     </div>
   );
 }

@@ -1,0 +1,32 @@
+.div-task {
+  height: 50px;
+}
+.div-backgroundd {
+  background-color: #ffd8e4;
+}
+.div-title {
+  height: 40px;
+  padding-top: 10px;
+  font-size: 21px;
+  font-weight: bold;
+  margin-left: 5%;
+}
+.div-addd {
+  height: 40px;
+  margin-left: 2%;
+  align-content: center;
+  text-align: center;
+  width: 96%;
+  background-color: #ff9ebb;
+  margin-top: 20px;
+}
+.div-add:hover {
+  cursor: pointer;
+}
+.div-listt {
+  height: 55px;
+  background-color: #fff1f5;
+  margin-left: 2%;
+  width: 96%;
+  margin-top: 10px;
+}

@@ -4,22 +4,23 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
 import Menu from "./Components/Menu";
-import ListBoard from "./Components/ListBoard";
-import BoardDetails from "./Components/BoardDetails";
-import { Router, Link, Route, Switch } from "react-router-dom";
+import Task from "./page/listTask/Task";
+import Register from "./page/register/Register";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import Login from "./page/login/Login";
+import ListBoard from "./page/listBoard/ListBoard";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router history={createBrowserHistory()}>
-      <Menu/>
       <Switch>
         <Route exact path="/" component={ListBoard} />
-        <Route exact path="/boarddetail/:id" component={BoardDetails} />
+        <Route exact path="/boards" component={ListBoard}/>
+        <Route exact path="/task/:board" component={Task} />
       </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );
-
 reportWebVitals();

@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  clear: both;
+}
+.div-line-left {
+  float: left;
+  justify-content: flex-start;
+  margin-top: 1%;
+}
+.div-line-right {
+  float: right;
+  margin-top: 1%;
+  font-size: 15px;
+}

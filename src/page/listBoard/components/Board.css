@@ -1,0 +1,23 @@
+.card-board {
+  width: 90%;
+  height: 100%;
+}
+.card-board:hover {
+  cursor: pointer;
+}
+.div-button {
+  align-items: center;
+}
+.delete-button {
+  text-align: right;
+  padding-right: 5%;
+  font-size: 23px;
+  color: #e5989b;
+  width: 100%;
+}
+.card-text:hover {
+  cursor: pointer;
+}
+.delete-button:hover {
+  cursor: pointer;
+}

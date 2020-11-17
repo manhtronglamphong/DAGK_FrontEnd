@@ -1,0 +1,17 @@
+.row-board {
+  height: 200px;
+}
+.span-board {
+  width: 70%;
+  height: 100%;
+}
+.header-icon {
+  font-size: 18px;
+  margin-left: 15px;
+  margin-top: 7px;
+  display: inline-block;
+}
+.input {
+  width: 180px;
+  display: inline-block;
+}

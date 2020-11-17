@@ -1,0 +1,17 @@
+.header {
+  background-color: #ffffff;
+  height: 50px;
+}
+.header-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 7px;
+  display: inline-block;
+}
+.header-icon {
+  font-size: 18px;
+  margin-left: 15px;
+  margin-top: 7px;
+  display: inline-block;
+}

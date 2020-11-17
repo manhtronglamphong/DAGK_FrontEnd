@@ -1,0 +1,17 @@
+.div-dash {
+  border-style: dashed;
+  border-color: #e5989b;
+  text-align: center;
+  height: 80%;
+}
+.div-dash:hover {
+  cursor: pointer;
+}
+.div-button {
+  font-size: 27px;
+  color: #e5989b;
+}
+.div-text {
+  font-size: 20px;
+  color: #e5989b;
+}
