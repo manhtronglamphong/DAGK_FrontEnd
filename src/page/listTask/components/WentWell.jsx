@@ -65,7 +65,7 @@ export default function WentWell(props) {
           return (
             <div className="div-list">
               <div>
-                <Tag board={props.board} title={item.name} column='Went well'></Tag>
+                <Tag id={item._id} title={item.name}></Tag>
               </div>
             </div>
           )

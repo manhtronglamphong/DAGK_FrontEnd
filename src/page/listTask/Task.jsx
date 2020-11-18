@@ -9,14 +9,39 @@ import "./Task.css";
 
 function Task({ match }) {
   const [edittitle, setEdittitle] = useState(false);
+  const [title, setTitle] = useState('');
+  const [newtitle, setNewTitle] = useState('');
   const [data, setData] = useState([]);
   const handleClick = () => {
     setEdittitle(!edittitle);
   }
+  const rename = (id, newname) => {
+    const data = { id: id, newName: newname }
+    const renameboard = async () => {
+      console.log(data);
+      await axios.post('https://dagk-back-end.herokuapp.com/board/renameBoard', data)
+        .then(function (response) {
+        })
+        .catch(function (error) {
+          console.log(error);
+          alert(error);
+        });
+      window.location.reload(true);
+    }
+    renameboard();
+  }
   useEffect(() => {
+    const fetchTitle = async () => {
+      const result = await axios.get(
+        `https://dagk-back-end.herokuapp.com/board/${match.params.board}`
+      );
+      setTitle(result.data.data.name);
+      setNewTitle(result.data.data.name);
+    };
+    fetchTitle();
     const fetchMyData = async () => {
       const result = await axios.get(
-        `https://dagk-back-end.herokuapp.com/tag/${localStorage.getItem('username')}/${match.params.board}`
+        `https://dagk-back-end.herokuapp.com/tag/board/${match.params.board}`
       );
       setData(result.data.data);
     };
@@ -31,7 +56,7 @@ function Task({ match }) {
           if (!edittitle)
             elements.push(
               <div className="header">
-                <div className="header-text">{match.params.board}</div>
+                <div className="header-text">{title}</div>
                 <div className="header-icon" onClick={handleClick}>
                   <i class="fas fa-pen" ></i>
                 </div>
@@ -39,10 +64,22 @@ function Task({ match }) {
             )
           else elements.push(
             <div className="header">
-              <div className="header-text">Job 1</div>
-              <div className="header-icon" onClick={handleClick}>
-                <i class="fas fa-check"></i>
-              </div>
+              <form class="submit" action="#">
+                <div className="input">
+                  <input
+                    className='edit-title'
+                    onChange={(evt) => setNewTitle(evt.target.value)}
+                    type="text"
+                    class="form-control"
+                    placeholder='Board Name...'
+                    required="true"
+                    autofocus=""
+                    value={newtitle}></input>
+                </div>
+                <div className="header-icon" onClick={() => rename(match.params.board, newtitle)}>
+                  <i class="fas fa-check"></i>
+                </div>
+              </form>
             </div>
           )
           return elements;

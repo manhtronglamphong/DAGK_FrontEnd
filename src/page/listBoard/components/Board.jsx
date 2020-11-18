@@ -8,12 +8,12 @@ import axios from 'axios';
 
 function Board({ data, history }) {
   // const history = createBrowserHistory();
-  const handleClick = (board) => {
+  const handleClick = (board, name) => {
     console.log(history)
     history.push(`/task/${board}`)
   }
-  const deleteBoard = (username, name) => {
-    const data = { username: username, name: name }
+  const deleteBoard = (id) => {
+    const data = { id: id }
     const deleteboard = async () => {
       await axios.post('https://dagk-back-end.herokuapp.com/board/deleteBoard', data)
         .then(function (response) {
@@ -29,10 +29,10 @@ function Board({ data, history }) {
     <div>
       <Card>
         <Card.Body>
-          <Card.Title className="card-text" onClick={() => handleClick(data.name)}>{data.name}</Card.Title>
+          <Card.Title className="card-text" onClick={() => handleClick(data._id, data.name)}>{data.name}</Card.Title>
           <Card.Text></Card.Text>
         </Card.Body>
-        <div className="delete-button" onClick={(e) => { if (window.confirm('Are you sure you wish to delete ' + data.name + '?')) deleteBoard(localStorage.getItem('username'), data.name) }}>
+        <div className="delete-button" onClick={(e) => { if (window.confirm('Are you sure you wish to delete ' + data.name + '?')) deleteBoard(data._id) }}>
           {/* <Button style={{marginLeft:'26%'}} variant="danger" onClick={handleClick}>Details</Button> */}
           <i class="fas fa-trash-alt"></i>
         </div>

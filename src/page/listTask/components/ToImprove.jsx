@@ -64,7 +64,7 @@ export default function ToImprove(props) {
                     return (
                         <div className="div-listt">
                             <div>
-                                <Tag board={props.board} title={item.name} column='To improve'></Tag>
+                                <Tag id={item._id} title={item.name}></Tag>
                             </div>
                         </div>
                     )

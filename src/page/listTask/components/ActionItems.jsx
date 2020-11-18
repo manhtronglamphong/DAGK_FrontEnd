@@ -64,7 +64,7 @@ export default function ActionItems(props) {
                     return (
                         <div className="div-listtt">
                             <div>
-                                <Tag board={props.board} title={item.name} column='Action items'></Tag>
+                                <Tag id={item._id} title={item.name}></Tag>
                             </div>
                         </div>
                     );
